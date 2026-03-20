@@ -32,19 +32,24 @@ export default function FeedbackCard({ text }: { text: string }) {
   const { score, strengths, weaknesses, ideal } = parseFeedback(text);
 
   return (
-    <div className="bg-white border rounded-2xl shadow-md p-4 space-y-4">
-      
-      {/* Header */}
-      <div className="flex items-center justify-between">
-        <h3 className="font-semibold text-lg">📊 Feedback</h3>
+    <div className="overflow-hidden rounded-[26px] border border-white/70 bg-[rgba(255,250,244,0.88)] shadow-[0_22px_48px_rgba(88,61,31,0.12)] backdrop-blur">
+      <div className="flex items-center justify-between gap-4 border-b border-[rgba(88,61,31,0.08)] px-4 py-4 sm:px-6">
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--muted)]">
+            Review
+          </p>
+          <h3 className="mt-1 text-lg font-semibold text-[var(--foreground)] sm:text-xl">
+            Answer Feedback
+          </h3>
+        </div>
         {score !== null && (
           <span
-            className={`px-3 py-1 text-sm rounded-full font-semibold ${
+            className={`rounded-full px-4 py-2 text-sm font-semibold ${
               score >= 7
-                ? "bg-green-100 text-green-700"
+                ? "bg-emerald-100 text-emerald-700"
                 : score >= 4
-                ? "bg-yellow-100 text-yellow-700"
-                : "bg-red-100 text-red-700"
+                  ? "bg-amber-100 text-amber-700"
+                  : "bg-rose-100 text-rose-700"
             }`}
           >
             {score}/10
@@ -52,35 +57,36 @@ export default function FeedbackCard({ text }: { text: string }) {
         )}
       </div>
 
-      {/* Strengths */}
-      {strengths && (
-        <div className="bg-green-50 border border-green-200 p-3 rounded-xl">
-          <p className="text-green-700 font-medium mb-1">✅ Strengths</p>
-          <p className="text-sm text-gray-700 whitespace-pre-line">
-            {strengths}
-          </p>
-        </div>
-      )}
+      <div className="grid gap-4 p-4 sm:p-6 lg:grid-cols-2">
+        {strengths && (
+          <div className="rounded-2xl border border-emerald-200 bg-emerald-50/80 p-4">
+            <p className="text-sm font-semibold text-emerald-700">Strengths</p>
+            <p className="mt-2 text-sm leading-7 text-[var(--foreground)]">
+              {strengths}
+            </p>
+          </div>
+        )}
 
-      {/* Weaknesses */}
-      {weaknesses && (
-        <div className="bg-red-50 border border-red-200 p-3 rounded-xl">
-          <p className="text-red-700 font-medium mb-1">❌ Weaknesses</p>
-          <p className="text-sm text-gray-700 whitespace-pre-line">
-            {weaknesses}
-          </p>
-        </div>
-      )}
+        {weaknesses && (
+          <div className="rounded-2xl border border-rose-200 bg-rose-50/80 p-4">
+            <p className="text-sm font-semibold text-rose-700">Weaknesses</p>
+            <p className="mt-2 text-sm leading-7 text-[var(--foreground)]">
+              {weaknesses}
+            </p>
+          </div>
+        )}
 
-      {/* Ideal Answer */}
-      {ideal && (
-        <div className="bg-gray-50 border p-3 rounded-xl">
-          <p className="font-medium mb-2">💡 Ideal Answer</p>
-          <p className="text-sm text-gray-700 whitespace-pre-line leading-relaxed">
-            {ideal}
-          </p>
-        </div>
-      )}
+        {ideal && (
+          <div className="rounded-2xl border border-[rgba(88,61,31,0.08)] bg-white/80 p-4 lg:col-span-2">
+            <p className="text-sm font-semibold text-[var(--foreground)]">
+              Ideal Answer
+            </p>
+            <p className="mt-2 whitespace-pre-line text-sm leading-7 text-[var(--muted)]">
+              {ideal}
+            </p>
+          </div>
+        )}
+      </div>
     </div>
   );
 }

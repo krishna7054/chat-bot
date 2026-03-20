@@ -1,26 +1,67 @@
 @import "tailwindcss";
-/* 
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f4efe6;
+  --background-strong: #eadfce;
+  --surface: rgba(255, 251, 245, 0.78);
+  --surface-strong: rgba(255, 248, 240, 0.96);
+  --border: rgba(88, 61, 31, 0.12);
+  --foreground: #1f160f;
+  --muted: #64574b;
+  --accent: #b76e32;
+  --accent-strong: #8f4f19;
+  --success: #2d7c57;
+  --warning: #b98121;
+  --danger: #b2493f;
+  --shadow: 0 24px 80px rgba(88, 61, 31, 0.14);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  min-height: 100%;
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.72), transparent 34%),
+    radial-gradient(circle at bottom right, rgba(183, 110, 50, 0.18), transparent 28%),
+    linear-gradient(135deg, var(--background), var(--background-strong));
 }
 
 body {
-  background: var(--background);
+  min-height: 100vh;
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-} */
+  font-family: var(--font-geist-sans), sans-serif;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.52), transparent 22%),
+    radial-gradient(circle at 80% 0%, rgba(183, 110, 50, 0.16), transparent 24%),
+    linear-gradient(135deg, #f8f1e6 0%, #efe3d1 45%, #e7d8c4 100%);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(88, 61, 31, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(88, 61, 31, 0.025) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: radial-gradient(circle at center, black 45%, transparent 95%);
+}
+
+::selection {
+  background: rgba(183, 110, 50, 0.24);
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
