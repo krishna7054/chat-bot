@@ -32,15 +32,15 @@ export default function Home() {
           <div className="relative overflow-hidden rounded-[28px] border border-white/50 bg-[rgba(255,251,245,0.72)] p-6 shadow-[0_24px_80px_rgba(88,61,31,0.14)] backdrop-blur-xl sm:p-8 lg:p-12">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(183,110,50,0.12),transparent_32%),linear-gradient(180deg,rgba(255,255,255,0.35),transparent_100%)]" />
             <div className="relative space-y-8">
-              <div className="inline-flex items-center rounded-full border border-[rgba(88,61,31,0.12)] bg-white/70 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-[var(--muted)]">
+              <div className="inline-flex items-center rounded-full border border-[rgba(88,61,31,0.12)] bg-white/70 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-(--muted)">
                 Interview Copilot
               </div>
 
               <div className="max-w-2xl space-y-4">
-                <h1 className="text-4xl font-semibold tracking-tight text-[var(--foreground)] sm:text-5xl lg:text-6xl">
+                <h1 className="text-4xl font-semibold tracking-tight text-(--foreground) sm:text-5xl lg:text-6xl">
                   Practice interviews in a space that feels focused and premium.
                 </h1>
-                <p className="max-w-xl text-base leading-7 text-[var(--muted)] sm:text-lg">
+                <p className="max-w-xl text-base leading-7 text-(--muted) sm:text-lg">
                   Pick a role, answer one question at a time, and get structured
                   feedback before moving to the next one.
                 </p>
@@ -48,26 +48,26 @@ export default function Home() {
 
               <div className="grid gap-4 sm:grid-cols-3">
                 <div className="rounded-2xl border border-white/60 bg-white/60 p-4">
-                  <p className="text-sm font-medium text-[var(--foreground)]">
+                  <p className="text-sm font-medium text-(--foreground)">
                     One question at a time
                   </p>
-                  <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
+                  <p className="mt-2 text-sm leading-6 text-(--muted)">
                     Clear flow without clutter or mixed responses.
                   </p>
                 </div>
                 <div className="rounded-2xl border border-white/60 bg-white/60 p-4">
-                  <p className="text-sm font-medium text-[var(--foreground)]">
+                  <p className="text-sm font-medium text-(--foreground)">
                     Instant feedback
                   </p>
-                  <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
+                  <p className="mt-2 text-sm leading-6 text-(--muted)">
                     Score, strengths, weaknesses, and ideal answer after each turn.
                   </p>
                 </div>
                 <div className="rounded-2xl border border-white/60 bg-white/60 p-4">
-                  <p className="text-sm font-medium text-[var(--foreground)]">
+                  <p className="text-sm font-medium text-(--foreground)">
                     Works everywhere
                   </p>
-                  <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
+                  <p className="mt-2 text-sm leading-6 text-(--muted)">
                     Responsive layouts for mobile, tablet, laptop, and desktop.
                   </p>
                 </div>
@@ -78,10 +78,10 @@ export default function Home() {
           <aside className="rounded-[28px] border border-white/50 bg-[rgba(255,248,240,0.88)] p-6 shadow-[0_24px_80px_rgba(88,61,31,0.14)] backdrop-blur-xl sm:p-8">
             <div className="space-y-6">
               <div>
-                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--muted)]">
+                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-(--muted)">
                   Start Session
                 </p>
-                <h2 className="mt-3 text-2xl font-semibold text-[var(--foreground)]">
+                <h2 className="mt-3 text-2xl font-semibold text-(--foreground)">
                   Choose your interview track
                 </h2>
               </div>
@@ -101,10 +101,10 @@ export default function Home() {
                           : "border-[rgba(88,61,31,0.08)] bg-white/75 hover:border-[rgba(183,110,50,0.2)] hover:bg-white"
                       }`}
                     >
-                      <p className="text-base font-semibold text-[var(--foreground)]">
+                      <p className="text-base font-semibold text-(--foreground)">
                         {item.label}
                       </p>
-                      <p className="mt-1 text-sm leading-6 text-[var(--muted)]">
+                      <p className="mt-1 text-sm leading-6 text-(--muted)">
                         {item.description}
                       </p>
                     </button>
