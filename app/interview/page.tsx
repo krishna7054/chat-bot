@@ -1,11 +1,20 @@
-"use client";
-
-import { useSearchParams } from "next/navigation";
 import ChatWindow from "./components/ChatWindow";
 
-export default function Page() {
-  const params = useSearchParams();
-  const role = params.get("role") || "frontend";
+type InterviewPageProps = {
+  searchParams: Promise<{
+    role?: string | string[];
+  }>;
+};
+
+export default async function Page({ searchParams }: InterviewPageProps) {
+  const params = await searchParams;
+  const roleValue = params.role;
+  const role =
+    typeof roleValue === "string"
+      ? roleValue
+      : Array.isArray(roleValue) && roleValue.length > 0
+        ? roleValue[0]
+        : "frontend";
 
   return <ChatWindow role={role} />;
 }
