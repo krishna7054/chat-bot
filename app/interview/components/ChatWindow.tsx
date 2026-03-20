@@ -142,36 +142,36 @@ export default function ChatWindow({ role }: { role: string }) {
           <div className="flex flex-col rounded-[28px] border border-white/60 bg-[rgba(255,248,240,0.76)] p-4 shadow-[0_24px_80px_rgba(88,61,31,0.14)] backdrop-blur-xl sm:p-5">
           <div className="space-y-5">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--muted)]">
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-(--muted)">
                 Live Session
               </p>
-              <h1 className="mt-2 text-2xl font-semibold text-[var(--foreground)]">
+              <h1 className="mt-2 text-2xl font-semibold text-(--foreground)">
                 {roleLabel} Interview
               </h1>
-              <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
+              <p className="mt-2 text-sm leading-6 text-(--muted)">
                 Answer each question, review the feedback, and continue to the next one.
               </p>
             </div>
 
             <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-2">
               <div className="rounded-2xl border border-white/70 bg-white/75 p-4">
-                <p className="text-xs uppercase tracking-[0.18em] text-[var(--muted)]">
+                <p className="text-xs uppercase tracking-[0.18em] text-(--muted)">
                   Time
                 </p>
-                <p className="mt-2 text-xl font-semibold text-[var(--foreground)]">
+                <p className="mt-2 text-xl font-semibold text-(--foreground)">
                   {formatTime(time)}
                 </p>
               </div>
               <div className="rounded-2xl border border-white/70 bg-white/75 p-4">
-                <p className="text-xs uppercase tracking-[0.18em] text-[var(--muted)]">
+                <p className="text-xs uppercase tracking-[0.18em] text-(--muted)">
                   Avg Score
                 </p>
-                <p className="mt-2 text-xl font-semibold text-[var(--foreground)]">
+                <p className="mt-2 text-xl font-semibold text-(--foreground)">
                   {averageScore}
                 </p>
               </div>
               <div className="col-span-2 rounded-2xl border border-white/70 bg-white/75 p-4 sm:col-span-1 lg:col-span-2">
-                <p className="text-xs uppercase tracking-[0.18em] text-[var(--muted)]">
+                <p className="text-xs uppercase tracking-[0.18em] text-(--muted)">
                   Progress
                 </p>
                 <div className="mt-3 h-2.5 overflow-hidden rounded-full bg-[rgba(88,61,31,0.08)]">
@@ -180,17 +180,17 @@ export default function ChatWindow({ role }: { role: string }) {
                     style={{ width: `${progress}%` }}
                   />
                 </div>
-                <p className="mt-3 text-sm text-[var(--muted)]">
+                <p className="mt-3 text-sm text-(--muted)">
                   {answeredQuestions} of {TOTAL_QUESTIONS} answers reviewed
                 </p>
               </div>
             </div>
 
-            <div className="rounded-[24px] border border-white/70 bg-[rgba(255,255,255,0.72)] p-4 shadow-[0_12px_28px_rgba(88,61,31,0.08)]">
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--muted)]">
+            <div className="rounded-3xl border border-white/70 bg-[rgba(255,255,255,0.72)] p-4 shadow-[0_12px_28px_rgba(88,61,31,0.08)]">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-(--muted)">
                 Current Prompt
               </p>
-              <p className="mt-3 text-sm leading-7 text-[var(--foreground)]">
+              <p className="mt-3 text-sm leading-7 text-(--foreground)">
                 {latestQuestion || "Preparing your first interview question..."}
               </p>
             </div>
@@ -202,14 +202,14 @@ export default function ChatWindow({ role }: { role: string }) {
           <div className="border-b border-[rgba(88,61,31,0.08)] px-4 py-4 sm:px-6">
             <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
               <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--muted)]">
+                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-(--muted)">
                   Interview Room
                 </p>
-                <h2 className="mt-2 text-xl font-semibold text-[var(--foreground)] sm:text-2xl">
+                <h2 className="mt-2 text-xl font-semibold text-(--foreground) sm:text-2xl">
                   Practice with focused, step-by-step feedback
                 </h2>
               </div>
-              <div className="rounded-full border border-[rgba(183,110,50,0.18)] bg-[rgba(183,110,50,0.08)] px-4 py-2 text-sm font-medium text-[var(--accent-strong)]">
+              <div className="rounded-full border border-[rgba(183,110,50,0.18)] bg-[rgba(183,110,50,0.08)] px-4 py-2 text-sm font-medium text-(--accent-strong)">
                 {isComplete ? "Session complete" : "Session in progress"}
               </div>
             </div>
@@ -234,11 +234,11 @@ export default function ChatWindow({ role }: { role: string }) {
           <div className="border-t border-[rgba(88,61,31,0.08)] bg-white/50 px-3 py-3 sm:px-5 sm:py-4 lg:px-6">
             <div className="mx-auto flex w-full max-w-4xl flex-col gap-3 rounded-[26px] border border-white/70 bg-white/80 p-3 shadow-[0_12px_28px_rgba(88,61,31,0.08)] sm:flex-row sm:items-end sm:p-4">
               <div className="flex-1">
-                <label className="mb-2 block text-xs font-semibold uppercase tracking-[0.18em] text-[var(--muted)]">
+                <label className="mb-2 block text-xs font-semibold uppercase tracking-[0.18em] text-(--muted)">
                   Your Answer
                 </label>
                 <input
-                  className="w-full rounded-2xl border border-[rgba(88,61,31,0.08)] bg-[rgba(255,251,245,0.92)] px-4 py-3 text-[15px] text-[var(--foreground)] outline-none transition focus:border-[rgba(183,110,50,0.35)] focus:ring-4 focus:ring-[rgba(183,110,50,0.12)] disabled:cursor-not-allowed disabled:opacity-60"
+                  className="w-full rounded-2xl border border-[rgba(88,61,31,0.08)] bg-[rgba(255,251,245,0.92)] px-4 py-3 text-[15px] text-(--foreground) outline-none transition focus:border-[rgba(183,110,50,0.35)] focus:ring-4 focus:ring-[rgba(183,110,50,0.12)] disabled:cursor-not-allowed disabled:opacity-60"
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
                   onKeyDown={(e) => {
@@ -254,7 +254,7 @@ export default function ChatWindow({ role }: { role: string }) {
               </div>
               <button
                 onClick={sendMessage}
-                className="w-full rounded-2xl bg-[linear-gradient(135deg,#c67a3f,#8f4f19)] px-5 py-3 text-sm font-semibold text-white shadow-[0_18px_40px_rgba(143,79,25,0.28)] transition duration-200 hover:-translate-y-0.5 hover:shadow-[0_22px_48px_rgba(143,79,25,0.34)] disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto sm:min-w-[140px]"
+                className="w-full rounded-2xl bg-[linear-gradient(135deg,#c67a3f,#8f4f19)] px-5 py-3 text-sm font-semibold text-white shadow-[0_18px_40px_rgba(143,79,25,0.28)] transition duration-200 hover:-translate-y-0.5 hover:shadow-[0_22px_48px_rgba(143,79,25,0.34)] disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto sm:min-w-35"
                 disabled={isComplete || loading}
               >
                 {isComplete ? "Completed" : "Send Answer"}

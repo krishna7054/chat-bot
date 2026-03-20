@@ -35,10 +35,10 @@ export default function FeedbackCard({ text }: { text: string }) {
     <div className="overflow-hidden rounded-[26px] border border-white/70 bg-[rgba(255,250,244,0.88)] shadow-[0_22px_48px_rgba(88,61,31,0.12)] backdrop-blur">
       <div className="flex items-center justify-between gap-4 border-b border-[rgba(88,61,31,0.08)] px-4 py-4 sm:px-6">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--muted)]">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-(--muted)">
             Review
           </p>
-          <h3 className="mt-1 text-lg font-semibold text-[var(--foreground)] sm:text-xl">
+          <h3 className="mt-1 text-lg font-semibold text-(--foreground) sm:text-xl">
             Answer Feedback
           </h3>
         </div>
@@ -61,7 +61,7 @@ export default function FeedbackCard({ text }: { text: string }) {
         {strengths && (
           <div className="rounded-2xl border border-emerald-200 bg-emerald-50/80 p-4">
             <p className="text-sm font-semibold text-emerald-700">Strengths</p>
-            <p className="mt-2 text-sm leading-7 text-[var(--foreground)]">
+            <p className="mt-2 text-sm leading-7 text-(--foreground)">
               {strengths}
             </p>
           </div>
@@ -70,7 +70,7 @@ export default function FeedbackCard({ text }: { text: string }) {
         {weaknesses && (
           <div className="rounded-2xl border border-rose-200 bg-rose-50/80 p-4">
             <p className="text-sm font-semibold text-rose-700">Weaknesses</p>
-            <p className="mt-2 text-sm leading-7 text-[var(--foreground)]">
+            <p className="mt-2 text-sm leading-7 text-(--foreground)">
               {weaknesses}
             </p>
           </div>
@@ -78,10 +78,10 @@ export default function FeedbackCard({ text }: { text: string }) {
 
         {ideal && (
           <div className="rounded-2xl border border-[rgba(88,61,31,0.08)] bg-white/80 p-4 lg:col-span-2">
-            <p className="text-sm font-semibold text-[var(--foreground)]">
+            <p className="text-sm font-semibold text-(--foreground)">
               Ideal Answer
             </p>
-            <p className="mt-2 whitespace-pre-line text-sm leading-7 text-[var(--muted)]">
+            <p className="mt-2 whitespace-pre-line text-sm leading-7 text-(--muted)">
               {ideal}
             </p>
           </div>
