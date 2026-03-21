@@ -1,36 +1,143 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 Interview Copilot
 
-## Getting Started
+A role-based AI-powered interview practice platform that simulates real technical interviews with structured feedback.
 
-First, run the development server:
+---
+
+## ✨ Overview
+
+Interview Copilot helps developers practice interviews in a focused and structured way.
+
+Instead of random AI chat, the system enforces:
+- One question at a time
+- Immediate structured feedback
+- Controlled interview flow
+
+Each response is evaluated with:
+- Score
+- Strengths
+- Weaknesses
+- Ideal Answer
+
+---
+
+## 🎯 Features
+
+- 🎭 Role-based interviews (Frontend, Backend, DSA)
+- 🧠 AI-generated questions & evaluation
+- 📊 Real-time scoring and progress tracking
+- ⏱️ Session timer
+- 📱 Fully responsive UI
+- 🔁 Controlled interview flow (fixed number of questions)
+- 🧹 Cleaned and structured AI output (no messy formatting)
+
+---
+
+## 🏗️ Tech Stack
+
+**Frontend**
+- Next.js 15 (App Router)
+- Tailwind CSS
+
+**Backend**
+- Next.js API Routes
+
+**AI**
+- Google Gemini API (`@google/genai`)
+
+---
+
+## 🧠 System Design
+
+The application is built with a clear separation of concerns:
+
+### 1. Frontend
+- Handles UI rendering, chat state, and user interaction
+- Parses and displays structured feedback
+
+### 2. API Layer
+- Controls interview flow (question → answer → feedback)
+- Limits total number of questions
+- Formats and validates AI responses
+
+### 3. AI Layer
+- Generates interview questions
+- Evaluates answers based on structured prompts
+
+> ⚠️ AI does NOT control application logic. The backend ensures deterministic behavior.
+
+---
+
+## 🛠️ Installation
+
+### 1. Clone the repository
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/krishna7054/chat-bot.git
+cd chat-bot
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Install dependencies
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 3. Setup environment variables
+Create a .env.local file:
+```bash
+GEMINI_API_KEY=your_api_key_here
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 4. Run the development server
+```bash
+npm run dev
+```
 
-## Learn More
+## 🤖 AI Handling Strategy (Important)
 
-To learn more about Next.js, take a look at the following resources:
+To avoid unreliable AI outputs ("AI slop"), the system follows strict principles:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### ✅ Structured Prompting
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+AI is forced to return responses in a fixed format:
 
-## Deploy on Vercel
+- Score
+- Strengths
+- Weaknesses
+- Ideal Answer
+- Next Question
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### ✅ Controlled Parsing
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Responses are parsed and split into:
+
+- Feedback
+- Next Question
+
+Only required data is extracted.
+
+### ✅ Validation Layer
+- Score extracted using regex
+- Missing or malformed responses are handled safely
+
+### ✅ Cleaning Layer
+- Removes markdown artifacts (*, #, etc.)
+- Ensures clean UI rendering
+
+### ✅ Code-Controlled Logic
+- Interview flow is NOT controlled by AI
+- Backend enforces:
+  - Question count
+  - Interview completion
+  - Response sequencing
+
+💡 AI is treated as a tool, not a source of truth.
+
+## 📊 Interview Flow
+1. User selects a role
+2. AI generates Question 1
+3. User submits answer
+4. AI evaluates response
+5. Feedback is displayed
+6. Next question is asked
+7. Process repeats until completion
